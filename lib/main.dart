@@ -28,111 +28,147 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+void alertfunction(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        backgroundColor: Colors.amberAccent,
+        title: Text('Contact Us'),
+        content: Text('mail us at mai@google.com'),
+        actions: <Widget>[
+          FlatButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text('Close'),
+          ),
+        ],
+      );
+    },
+  );
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   int count = 0, count2 = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        elevation: 6.0,
+      ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(40.0),
-          child: Column(children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(elevation: 30.0),
-                  onPressed: () {
-                    setState(() {
-                      count2 += 1;
-                    });
-                    print('Button Clicked');
-                  },
-                  child: Text(
-                    ' Clickable Button',
-                    style: GoogleFonts.roboto(
-                      fontSize: 30.0,
-                    ),
-                  ),
-                ),
-              ],
+          child: ListView(
+        padding: EdgeInsets.all(10.0),
+        children: <Widget>[
+          TextButton(
+              onPressed: () {
+                alertfunction(context);
+              },
+              child: Text('Contact us')),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            height: 200.0,
+            width: MediaQuery.of(context).size.width,
+            child: Text(
+              'Container 1',
+              style: GoogleFonts.roboto(
+                fontSize: 20.0,
+              ),
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      count += 1;
-                    });
-                  },
-                  icon: Icon(Icons.favorite_outline_sharp),
-                  iconSize: 100.0,
-                  color: Colors.red,
-                ),
-                Text(
-                  '$count',
-                  style: GoogleFonts.roboto(fontSize: 50.0),
-                ),
-                Icon(
-                  Icons.umbrella_rounded,
-                  color: Colors.pink,
-                  size: 24.0,
-                ),
-                Icon(
-                  Icons.audiotrack,
-                  color: Colors.green,
-                  size: 30.0,
-                ),
-                Icon(
-                  Icons.favorite,
-                  color: Colors.blue,
-                  size: 36.0,
-                ),
-              ],
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              color: Colors.amberAccent,
+              border: Border.all(
+                width: 1.0,
+                color: Colors.black,
+                style: BorderStyle.solid,
+              ),
             ),
-            SizedBox(
-              height: 50.0,
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            height: 200.0,
+            width: MediaQuery.of(context).size.width - 20,
+            child: Text(
+              'Container 2',
+              style: GoogleFonts.roboto(
+                fontSize: 20.0,
+              ),
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(
-                  Icons.umbrella_rounded,
-                  color: Colors.pink,
-                  size: 24.0,
-                ),
-                Text(
-                  '$count2',
-                ),
-                Icon(
-                  Icons.audiotrack,
-                  color: Colors.green,
-                  size: 30.0,
-                ),
-                Icon(
-                  Icons.favorite,
-                  color: Colors.blue,
-                  size: 36.0,
-                ),
-              ],
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              color: Colors.blueAccent,
+              border: Border.all(
+                  width: 1.0, color: Colors.black, style: BorderStyle.solid),
             ),
-          ]),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        splashColor: Colors.amber,
-        backgroundColor: Colors.black,
-        onPressed: () {
-          print('Floating Button Clicked');
-        },
-        child: Icon(
-          Icons.wifi,
-          color: Colors.white,
-        ),
-      ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              padding: EdgeInsets.all(10.0),
+              height: 200.0,
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                'Container 6',
+                style: GoogleFonts.roboto(
+                  fontSize: 20.0,
+                ),
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                color: Colors.pinkAccent,
+                border: Border.all(
+                    width: 1.0, color: Colors.black, style: BorderStyle.solid),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              padding: EdgeInsets.all(10.0),
+              height: 200.0,
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                'Container 3',
+                style: GoogleFonts.roboto(
+                  fontSize: 20.0,
+                ),
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                color: Colors.greenAccent,
+                border: Border.all(
+                    width: 1.0, color: Colors.black, style: BorderStyle.solid),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              padding: EdgeInsets.all(10.0),
+              height: 200.0,
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                'Container 4',
+                style: GoogleFonts.roboto(
+                  fontSize: 20.0,
+                ),
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                color: Colors.purpleAccent,
+                border: Border.all(
+                    width: 1.0, color: Colors.black, style: BorderStyle.solid),
+              ),
+            ),
+          )
+        ],
+      )),
     );
   }
 }
