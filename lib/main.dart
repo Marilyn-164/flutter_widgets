@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'NextInGo App Demo1'),
+      home: MyHomePage(title: 'Flutter Home Page'),
     );
   }
 }
@@ -29,38 +30,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int count = 0, count2 = 0;
-  int _selectedIndex = 0;
-
-  static const TextStyle OptionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0:Home',
-      style: OptionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: OptionStyle,
-    ),
-    Text(
-      'Index 2: Organization',
-      style: OptionStyle,
-    ),
-  ];
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-
-/*        child: Padding(
+        child: Padding(
           padding: const EdgeInsets.all(40.0),
           child: Column(children: <Widget>[
             Row(
@@ -76,6 +50,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text(
                     ' Clickable Button',
+                    style: GoogleFonts.roboto(
+                      fontSize: 30.0,
+                    ),
                   ),
                 ),
               ],
@@ -96,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Text(
                   '$count',
+                  style: GoogleFonts.roboto(fontSize: 50.0),
                 ),
                 Icon(
                   Icons.umbrella_rounded,
@@ -143,37 +121,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ]),
         ),
-      */
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.red,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-            backgroundColor: Colors.purple,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-            backgroundColor: Colors.pink,
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
-      /*   floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         splashColor: Colors.amber,
         backgroundColor: Colors.black,
         onPressed: () {
@@ -183,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Icons.wifi,
           color: Colors.white,
         ),
-      ),*/
+      ),
     );
   }
 }
