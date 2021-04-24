@@ -10,6 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      routes: {
+                  '/SecondScreen' : (context) => SecondPage(), 
+      },
+      
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -103,14 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //Screen 1 Navigation Code
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SecondPage();
-                      },
-                    ),
-                  );
+                  Navigator.pushNamed(context, '/SecondScreen');
                 },
                 child: Text('Push To Next', style: GoogleFonts.montserrat(fontSize:25.0),),
               ),
