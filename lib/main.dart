@@ -100,8 +100,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
               ),
 
-
-
 //Screen 1 Navigation Code
               ElevatedButton(
                 onPressed: () {
@@ -109,21 +107,39 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return ;
+                        return;
                       },
                     ),
                   );
                 },
                 child: Text('Push To Next'),
               ),
-
-
-
-
-
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second Page'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Push To Next'),
+            ),
+          ],
+        ),
       ),
     );
   }
