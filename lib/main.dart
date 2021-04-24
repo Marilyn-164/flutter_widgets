@@ -136,6 +136,40 @@ class SecondPage extends StatelessWidget {
               },
               child: Text('Pop to previous screen',style: GoogleFonts.montserrat(fontSize:25.0)),
             ),
+            //Screen 3 Navigation Code
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/ThirdScreen');
+                },
+                child: Text('Go to third screen', style: GoogleFonts.montserrat(fontSize:25.0),),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+            
+ class ThirdPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Third Page'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Pop to previous screen',style: GoogleFonts.montserrat(fontSize:25.0)),
+            ),
           ],
         ),
       ),
