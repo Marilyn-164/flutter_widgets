@@ -31,12 +31,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     final loginButton = Material(
       elevation: 5,
-      borderRadius: BorderRadius.circular(30),
-      color: Colors.black,
+      borderRadius: BorderRadius.circular(10),
+      color: Colors.blue,
       child: MaterialButton(
         onPressed: () {},
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -44,14 +45,16 @@ class _MyHomePageState extends State<MyHomePage> {
           'Sign in',
           style: GoogleFonts.montserrat(
             fontSize: 20,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w800,
+            color: Colors.white,
           ),
         ),
         minWidth: MediaQuery.of(context).size.width,
       ),
     );
 
-    final txtField = TextField(
+    final txtField1 = TextField(
+      textInputAction: TextInputAction.next,
       obscureText: false,
       style: GoogleFonts.montserrat(
         fontSize: 20.0,
@@ -59,144 +62,68 @@ class _MyHomePageState extends State<MyHomePage> {
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: 'Email',
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30.0),
-        ),
+        border: OutlineInputBorder(),
       ),
     );
 
-    final txtButton1 = TextButton(
-      onPressed: () {
-        showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                titlePadding: EdgeInsets.all(10.0),
-                backgroundColor: Colors.lightBlue,
-                insetPadding: EdgeInsets.all(20.0),
-                contentTextStyle: TextStyle(color: Colors.blue),
-                title: Text('Contact Info'),
-                content: Text('mail us at: maail@nextingo.in'),
-                actions: <Widget>[],
-              );
-            });
+    final txtField2 = TextField(
+      onTap: () {
+        Border.all(color: Colors.blue);
       },
-      child: Text('Contact'),
-    );
-
-    final container1 = Padding(
-      padding: const EdgeInsets.only(bottom: 20.0),
-      child: Container(
-        padding: EdgeInsets.all(20.0),
-        height: 200.0,
-        width: MediaQuery.of(context).size.width,
-        child: Text(
-          'Container 1',
-          style: GoogleFonts.roboto(
-            fontSize: 20.0,
-          ),
-        ),
-        margin: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-          color: Colors.amberAccent,
-          border: Border.all(
-              width: 1.0, color: Colors.black, style: BorderStyle.solid),
-        ),
+      obscureText: true,
+      style: GoogleFonts.montserrat(
+        fontSize: 20.0,
       ),
-    );
-
-    final elevatedButon = Padding(
-      padding: const EdgeInsets.only(bottom: 20.0),
-      child: Container(
-        padding: EdgeInsets.all(20.0),
-        height: 200.0,
-        width: MediaQuery.of(context).size.width,
-        child: Text(
-          'Container 1',
-          style: GoogleFonts.roboto(
-            fontSize: 20.0,
-          ),
-        ),
-        margin: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-          color: Colors.amberAccent,
-          border: Border.all(
-              width: 1.0, color: Colors.black, style: BorderStyle.solid),
-        ),
-      ),
-    );
-
-    final iconButton = IconButton(
-      onPressed: () {
-        print('Icon Button Clicked');
-      },
-      icon: Icon(Icons.favorite_border_sharp),
-    );
-
-    final oulinedButton = OutlinedButton(
-      onPressed: () {},
-      child: Text(
-        'Outlined Button',
-        style: GoogleFonts.roboto(
-          fontSize: 20.0,
-        ),
-      ),
-      autofocus: true,
-    );
-
-    final txtButton2 = TextButton(
-      onPressed: () {},
-      child: Text(
-        'Text Button',
-        style: GoogleFonts.roboto(
-          fontSize: 20.0,
-          fontWeight: FontWeight.bold,
-        ),
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        hintText: 'Password',
+        border: OutlineInputBorder(),
       ),
     );
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            counter = counter - 1;
-          });
-          print('Floating button clicked $counter');
-        },
-        child: Icon(Icons.minimize),
-        foregroundColor: Colors.black,
-        backgroundColor: Colors.yellow,
-        elevation: 6.0,
-        focusColor: Colors.amber,
-      ),
- 
-
       appBar: AppBar(
         title: Text(widget.title),
         elevation: 6.0,
       ),
+      body: ListView(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // Image.asset('assets/1.png'),
+              SizedBox(
+                height: 5,
+              ),
+              // txtField1,
+              SizedBox(
+                height: 20,
+              ),
 
- 
-      body: Center(
-        child: ListView(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                txtField,
-                loginButton,
-                txtButton1,
-                container1,
-                elevatedButon,
-                iconButton,
-                oulinedButton,
-                txtButton2,
-              ],
-            ),
-          ],
-        ),
+
+
+//Screen 1 Navigation Code
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ;
+                      },
+                    ),
+                  );
+                },
+                child: Text('Push To Next'),
+              ),
+
+
+
+
+
+            ],
+          ),
+        ],
       ),
     );
   }
