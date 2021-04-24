@@ -10,11 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       routes: {
-                  '/SecondScreen' : (context) => SecondPage(), 
+       
       },
-      
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -39,6 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+
+
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(10),
@@ -58,7 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
+
+
+
+
+
+
     final txtField1 = TextField(
+
       textInputAction: TextInputAction.next,
       obscureText: false,
       style: GoogleFonts.montserrat(
@@ -69,12 +77,17 @@ class _MyHomePageState extends State<MyHomePage> {
         hintText: 'Email',
         border: OutlineInputBorder(),
       ),
+
+
+
     );
 
+
+
+
+
     final txtField2 = TextField(
-      onTap: () {
-        Border.all(color: Colors.blue);
-      },
+
       obscureText: true,
       style: GoogleFonts.montserrat(
         fontSize: 20.0,
@@ -86,92 +99,26 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
+
+final img = Image.asset('assets/1.png',);
+
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        elevation: 6.0,
-      ),
+     
       body: ListView(
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              // Image.asset('assets/1.png'),
-              SizedBox(
-                height: 5,
-              ),
-              // txtField1,
-              SizedBox(
-                height: 20,
-              ),
+             
+                        img,
+                        txtField1,
+                        txtField2,
+                        loginButton,
 
-//Screen 1 Navigation Code
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/SecondScreen');
-                },
-                child: Text('Push To Next', style: GoogleFonts.montserrat(fontSize:25.0),),
-              ),
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class SecondPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Second Page'),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text('Pop to previous screen',style: GoogleFonts.montserrat(fontSize:25.0)),
-            ),
-            //Screen 3 Navigation Code
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/ThirdScreen');
-                },
-                child: Text('Go to third screen', style: GoogleFonts.montserrat(fontSize:25.0),),
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
-
-
-            
- class ThirdPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Third Page'),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text('Pop to previous screen',style: GoogleFonts.montserrat(fontSize:25.0)),
-            ),
-          ],
-        ),
       ),
     );
   }
