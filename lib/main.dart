@@ -107,12 +107,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return;
+                        return SecondPage();
                       },
                     ),
                   );
                 },
-                child: Text('Push To Next'),
+                child: Text('Push To Next', style: GoogleFonts.montserrat(fontSize:25.0),),
               ),
             ],
           ),
@@ -136,7 +136,7 @@ class SecondPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Push To Next'),
+              child: Text('Pop to previous screen',style: GoogleFonts.montserrat(fontSize:25.0)),
             ),
           ],
         ),
