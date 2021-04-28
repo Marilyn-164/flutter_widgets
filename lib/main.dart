@@ -122,35 +122,43 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-
             UserAccountsDrawerHeader(
               accountName: Text('NextinGo'),
               accountEmail: Text('nextingoindia@gmail.com'),
               currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/1.png'),
                 backgroundColor: Colors.white,
-                child: Text('Next',style: GoogleFonts.montserrat(color: Colors.blue, fontSize: 25,),),
+                // child: Text('Next',style: GoogleFonts.montserrat(color: Colors.blue, fontSize: 25,),),
               ),
+
             ),
-
-ListTile(
-  leading: Icon(Icons.settings),
-  title: Text('Settings'),
-  trailing: Text('27/04/2021'),
-  subtitle: Text('Update values'),
-),
-ListTile(
-  leading: Icon(Icons.dock_outlined),
-  title: Text('FAQ'),
-  trailing: Text(''),
-  subtitle: Text('Read before raising tickets'),
-),
-ListTile(
-  leading: Icon(Icons.logout),
-  title: Text('Logout'),
-  trailing: Text(''),
-  subtitle: Text('This will sign you out'),
-),
-
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              trailing: Icon(Icons.arrow_forward_outlined),
+              subtitle: Text('Update values'),
+              onTap: (){
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.dock_outlined),
+              title: Text('FAQ'),
+              trailing: Icon(Icons.arrow_forward_outlined),
+              subtitle: Text('Read before raising tickets'),
+              onTap: (){
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              trailing: Icon(Icons.arrow_forward_outlined),
+              subtitle: Text('This will sign you out'),
+              onTap: (){
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),
