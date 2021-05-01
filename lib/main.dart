@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/futuredemo.dart';
-import 'package:flutter_application_1/graphics.dart';
+import 'package:flutter_application_1/Widget/graphics.dart';
 //import 'package:flutter_application_1/gridviewbuilder.dart';
-import 'package:flutter_application_1/signup.dart';
+import 'package:flutter_application_1/auth/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // import 'package:widget_demo/listview.dart';
