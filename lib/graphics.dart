@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CurvePainter extends CustomPainter {
+
   @override
   void paint(Canvas canvas, Size size) {
     Path path = Path();
@@ -17,32 +18,41 @@ class CurvePainter extends CustomPainter {
     path.quadraticBezierTo(
         size.width * 0.75, size.height * 0.85, size.width, size.height * 0.60);
     path.lineTo(size.width, 0);
+
     path.close();
-    paint.color = Colors.purpleAccent;
+    paint.color = Colors.black;
     canvas.drawPath(path, paint);
 
+
+//
     path = Path();
     path.addOval(
-      Rect.fromCircle(center: Offset(350, 680), radius: 60.0),
+      Rect.fromCircle(center: Offset(200, 680), radius: 50.0),
     );
     path.close();
     paint.color = Colors.blue;
     canvas.drawPath(path, paint);
 
+
+//
     path = Path();
     path.addOval(
-      Rect.fromCircle(center: Offset(400, 560), radius: 40.0),
+      Rect.fromCircle(center: Offset(300, 610), radius: 20.0),
     );
     path.close();
     paint.color = Colors.pinkAccent;
     canvas.drawPath(path, paint);
 
+
+//
     path = Path();
     path.addOval(
-      Rect.fromCircle(center: Offset(20, 660), radius: 80.0),
+      Rect.fromCircle(center: Offset(20, 630), radius: 80.0),
     );
-    paint.color = Colors.teal;
+    paint.color = Colors.orange;
     canvas.drawPath(path, paint);
+
+
   }
 
   @override
