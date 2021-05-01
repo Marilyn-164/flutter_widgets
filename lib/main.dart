@@ -1,17 +1,18 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/futuredemo.dart';
 import 'package:flutter_application_1/graphics.dart';
-import 'package:flutter_application_1/listview.dart';
+//import 'package:flutter_application_1/gridviewbuilder.dart';
 import 'package:flutter_application_1/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// import 'package:widget_demo/listview.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ListBuilderDemo(),
+      home: FutureDemo(),
     );
   }
 }
@@ -131,14 +132,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Colors.white,
                 // child: Text('Next',style: GoogleFonts.montserrat(color: Colors.blue, fontSize: 25,),),
               ),
-
             ),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
               trailing: Icon(Icons.arrow_forward_outlined),
               subtitle: Text('Update values'),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
@@ -147,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text('FAQ'),
               trailing: Icon(Icons.arrow_forward_outlined),
               subtitle: Text('Read before raising tickets'),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
@@ -156,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text('Logout'),
               trailing: Icon(Icons.arrow_forward_outlined),
               subtitle: Text('This will sign you out'),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
